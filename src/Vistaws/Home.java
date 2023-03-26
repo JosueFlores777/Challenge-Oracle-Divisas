@@ -29,6 +29,7 @@ public class Home extends JFrame {
 	private JButton btnNewButton;
 	private JLabel lblNewLabel;
 	private JLabel Logo;
+	private JButton BtnInicio;
 	/**
 	 * Launch the application.
 	 */
@@ -71,7 +72,7 @@ public class Home extends JFrame {
 		contentPane.add(panel);
 		panel.setLayout(null);
 		
-		JButton BtnInicio = new JButton("Inicio");
+		BtnInicio = new JButton("Inicio");
 		BtnInicio.setFont(new Font("Tahoma", Font.BOLD, 14));
 		BtnInicio.setIcon(new ImageIcon("E:\\Descargar\\ProyectoEclipse\\ConversorDivisas\\src\\Img\\home.png"));
 		BtnInicio.addActionListener(new ActionListener() {
@@ -79,7 +80,7 @@ public class Home extends JFrame {
 				menuClicked(panelHome1);
 			}
 		});
-		BtnInicio.setBounds(23, 187, 187, 58);
+		BtnInicio.setBounds(23, 132, 187, 58);
 		panel.add(BtnInicio);
 		
 		JButton BtnTemperatura = new JButton("Temperatura");
@@ -90,7 +91,7 @@ public class Home extends JFrame {
 			}
 		});
 		BtnTemperatura.setIcon(new ImageIcon(Home.class.getResource("/Img/temperatura.png")));
-		BtnTemperatura.setBounds(23, 330, 187, 58);
+		BtnTemperatura.setBounds(23, 273, 187, 58);
 		panel.add(BtnTemperatura);
 		
 		BtnDivisas = new JButton("Divisas");
@@ -101,7 +102,7 @@ public class Home extends JFrame {
 			}
 		});
 		BtnDivisas.setIcon(new ImageIcon(Home.class.getResource("/Img/divisas.png")));
-		BtnDivisas.setBounds(23, 261, 187, 58);
+		BtnDivisas.setBounds(23, 204, 187, 58);
 		panel.add(BtnDivisas);
 		
 		btnNewButton = new JButton("Sobre MI");
@@ -112,13 +113,19 @@ public class Home extends JFrame {
 			}
 		});
 		btnNewButton.setIcon(new ImageIcon("E:\\Descargar\\ProyectoEclipse\\ConversorDivisas\\src\\Img\\perfil.png"));
-		btnNewButton.setBounds(23, 412, 187, 58);
+		btnNewButton.setBounds(23, 342, 187, 58);
 		panel.add(btnNewButton);
 		
 		Logo = new JLabel("");
 		Logo.setIcon(new ImageIcon(Home.class.getResource("/Img/lgo.png")));
-		Logo.setBounds(52, 22, 120, 88);
+		Logo.setBounds(52, 11, 120, 88);
 		panel.add(Logo);
+		
+		JButton BtnSalir = new JButton("Salir");
+		BtnSalir.setIcon(new ImageIcon("E:\\Descargar\\ProyectoEclipse\\ConversorDivisas\\src\\Img\\salida.png"));
+		BtnSalir.setFont(new Font("Tahoma", Font.BOLD, 14));
+		BtnSalir.setBounds(23, 429, 187, 53);
+		panel.add(BtnSalir);
 		
 		lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon("E:\\Descargar\\ProyectoEclipse\\ConversorDivisas\\src\\Img\\fondo.jpeg"));
@@ -146,6 +153,4 @@ public class Home extends JFrame {
 		panel.setVisible(true);
 		
 	}
-	
-	
 }
