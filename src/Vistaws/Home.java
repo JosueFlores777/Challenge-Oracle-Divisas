@@ -1,23 +1,17 @@
 package Vistaws;
-import java.awt.BorderLayout;
 import java.awt.EventQueue;
 
-import javax.swing.Icon;
 import javax.swing.JFrame;
 import javax.swing.JPanel;
 import javax.swing.border.EmptyBorder;
-import javax.swing.event.ChangeListener;
-
 import java.awt.Color;
 import javax.swing.JLabel;
 import javax.swing.JOptionPane;
 import javax.swing.ImageIcon;
 import java.awt.Font;
-import java.awt.Frame;
 import java.awt.event.MouseAdapter;
 import java.awt.event.MouseEvent;
-import java.awt.event.WindowAdapter;
-import java.awt.event.WindowEvent;
+
 
 import javax.swing.JButton;
 import java.awt.event.ActionListener;
@@ -44,7 +38,7 @@ public class Home extends JFrame {
 			public void run() {
 				try {
 					Home frame = new Home();
-				
+					
 					frame.setVisible(true);
 				} catch (Exception e) {
 					e.printStackTrace();
@@ -53,19 +47,20 @@ public class Home extends JFrame {
 		});
 	}
 
-	/**
-	 * Create the frame.
-	 */
+
 	public Home() {
 		
+
+        
 		panelHome1 = new HomePn();
 		PanelDivisas = new Divisas();
 		PanelTemperatura = new Temperatura();
 		panelAbout = new About();
-		
+		setUndecorated(true);
+
 		setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
 		setBounds(100, 100, 998, 543);
-		setUndecorated(true);
+		setDefaultCloseOperation(JFrame.DO_NOTHING_ON_CLOSE);
 		contentPane = new JPanel();
 		contentPane.setBackground(new Color(40, 34, 44));
 		contentPane.setBorder(new EmptyBorder(5, 5, 5, 5));
