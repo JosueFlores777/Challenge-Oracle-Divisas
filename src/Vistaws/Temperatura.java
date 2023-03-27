@@ -4,11 +4,14 @@ import javax.swing.ImageIcon;
 import javax.swing.JButton;
 import javax.swing.JComboBox;
 import javax.swing.JLabel;
+import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
 import java.awt.Color;
 import java.awt.Font;
+import java.awt.event.KeyAdapter;
+import java.awt.event.KeyEvent;
 
 public class Temperatura extends JPanel {
 	private JTextField TxtCantiTempe;
@@ -18,7 +21,7 @@ public class Temperatura extends JPanel {
 	 * Create the panel.
 	 */
 	public Temperatura() {
-		setBounds(0, 0,719, 484);
+		setBounds(0, 0,746, 519);
 		setBackground(new Color(40, 32, 40));
 		setLayout(null);
 		
@@ -28,9 +31,10 @@ public class Temperatura extends JPanel {
 		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(345, 11, 351, 55);
 		add(lblNewLabel);
-		
-		JPanel panel = new JPanel();
-		panel.setBounds(22, 58, 687, 396);
+		RoundedPanel panel = new RoundedPanel(130);
+		//JPanel panel = new JPanel();
+		panel.setBackground(new Color(40, 32, 40));
+		panel.setBounds(22, 58, 688, 424);
 		add(panel);
 		panel.setLayout(null);
 		
@@ -41,12 +45,12 @@ public class Temperatura extends JPanel {
 		
 		JButton btnNewButton = new JButton("Calcular");
 		btnNewButton.setIcon(new ImageIcon("E:\\Descargar\\ProyectoEclipse\\ConversorDivisas\\src\\Img\\humedad.png"));
-		btnNewButton.setBounds(145, 308, 145, 46);
+		btnNewButton.setBounds(145, 333, 145, 46);
 		panel.add(btnNewButton);
 		
 		JButton btnNewButton_1 = new JButton("Limpiar");
 		btnNewButton_1.setIcon(new ImageIcon("E:\\Descargar\\ProyectoEclipse\\ConversorDivisas\\src\\Img\\basura.png"));
-		btnNewButton_1.setBounds(331, 308, 145, 46);
+		btnNewButton_1.setBounds(338, 333, 145, 46);
 		panel.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Temperatura ");
@@ -76,12 +80,24 @@ public class Temperatura extends JPanel {
 		
 		TxtCantiTempe = new JTextField();
 		TxtCantiTempe.setFont(new Font("SansSerif", Font.PLAIN, 25));
-		TxtCantiTempe.setBackground(new Color(175, 238, 238));
+		TxtCantiTempe.setBackground(new Color(220, 220, 220));
 		TxtCantiTempe.setBounds(426, 208, 194, 46);
 		panel.add(TxtCantiTempe);
 		TxtCantiTempe.setColumns(10);
 		
 		txtRespueTemp = new JTextField();
+		txtRespueTemp.addKeyListener(new KeyAdapter() {
+			@Override
+			public void keyTyped(KeyEvent e) {
+				char validar = e.getKeyChar();
+				if(Character.isLetter(validar)) {
+					getToolkit().beep();
+					e.consume();
+					
+					JOptionPane.showConfirmDialog(getRootPane(), "Ingrese solo datos numeros");
+				}
+			}
+		});
 		txtRespueTemp.setFont(new Font("SansSerif", Font.PLAIN, 25));
 		txtRespueTemp.setBackground(new Color(220, 220, 220));
 		txtRespueTemp.setBounds(59, 209, 194, 46);

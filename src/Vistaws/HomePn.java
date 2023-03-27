@@ -11,13 +11,13 @@ public class HomePn extends JPanel {
 	 * Create the panel.
 	 */
 	public HomePn() {
-		setBounds(0, 0, 719, 484);
-		setBackground(new Color(0, 255, 0));
+		setBounds(0, 0,711, 508);
+		setBackground(new Color(40, 38, 44));
 		setLayout(null);
 		
 		JLabel lblNewLabel = new JLabel("");
 		lblNewLabel.setIcon(new ImageIcon(HomePn.class.getResource("/Img/alura.jpg")));
-		lblNewLabel.setBounds(-61, 0, 811, 484);
+		lblNewLabel.setBounds(-64, -13, 834, 537);
 		add(lblNewLabel);
 	}
 }
