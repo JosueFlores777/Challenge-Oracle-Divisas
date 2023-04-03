@@ -49,7 +49,6 @@ public class Home extends JFrame {
 
 
 	public Home() {
-		
 
         
 		panelHome1 = new HomePn();
