@@ -23,15 +23,12 @@ public class Divisas extends JPanel implements ItemListener,ActionListener {
 		
 		datos d= new datos();
 		
-		
 		setBounds(0, 0, 737, 517);
 		setBackground(new Color(40, 32, 40));
 		setLayout(null);
 		
 		RoundedPanel panel = new RoundedPanel(130);
 		 
-	
-		//JPanel panel = new JPanel();
 		panel.setBackground(new Color(40, 32, 40));
 		panel.setBounds(22, 64, 687, 410);
 		add(panel);
@@ -84,7 +81,7 @@ public class Divisas extends JPanel implements ItemListener,ActionListener {
 
 		lblrepuesta = new JLabel();
 		lblrepuesta.setFont(new Font("Tahoma", Font.BOLD, 19));
-		lblrepuesta.setBounds(426, 219, 155, 37);
+		lblrepuesta.setBounds(426, 219, 194, 46);
 		panel.add(lblrepuesta);
 		// Finish JLabel
 		
@@ -150,7 +147,7 @@ public class Divisas extends JPanel implements ItemListener,ActionListener {
 				String divisaDestino= (String) CmbDDidivsaA.getSelectedItem();
 				if(divisaOrigen.equals("Elija opcion")|| divisaDestino.equals("Elija opcion")) {
 				
-					JOptionPane.showConfirmDialog(this, "No puedes mandar datos vacios, elija una option", "Lo siento!!!", JOptionPane.WARNING_MESSAGE);
+					JOptionPane.showConfirmDialog(this, "No puedes mandar datos vacios, elija una option de conversion", "Lo siento!!!", JOptionPane.WARNING_MESSAGE);
 					
 				}else {
 					 String respuesta=""+conversor.convertirDivisas(number,divisaOrigen,divisaDestino);

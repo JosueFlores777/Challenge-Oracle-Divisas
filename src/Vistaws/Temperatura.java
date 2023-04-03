@@ -8,22 +8,58 @@ import javax.swing.JOptionPane;
 import javax.swing.JPanel;
 import javax.swing.JTextField;
 
+import Logic.Temperat;
+import Logic.conversor;
+import Logic.datos;
+
+import java.awt.event.*;
 import java.awt.Color;
 import java.awt.Font;
-import java.awt.event.KeyAdapter;
-import java.awt.event.KeyEvent;
 
-public class Temperatura extends JPanel {
-	private JTextField TxtCantiTempe;
+
+public class Temperatura extends JPanel  implements ItemListener,ActionListener {
+	Temperat t = new Temperat();
 	private JTextField txtRespueTemp;
+	private JButton btnCalcular;
+	private JComboBox<String> CmbTempeEle;
+	private JComboBox<String> CmbTempConver;
+	private JLabel lblrespuesta;
 
 	/**
 	 * Create the panel.
 	 */
 	public Temperatura() {
+		datos d = new datos();
 		setBounds(0, 0,746, 519);
 		setBackground(new Color(40, 32, 40));
 		setLayout(null);
+		
+	
+		RoundedPanel panel = new RoundedPanel(130);
+	
+		panel.setBackground(new Color(40, 32, 40));
+		panel.setBounds(22, 58, 688, 424);
+		add(panel);
+		panel.setLayout(null);
+		
+
+		//Button
+		btnCalcular = new JButton("Calcular");
+		btnCalcular.setIcon(new ImageIcon("E:\\Descargar\\ProyectoEclipse\\ConversorDivisas\\src\\Img\\humedad.png"));
+		btnCalcular.setBounds(145, 333, 145, 46);
+		btnCalcular.addActionListener(this);
+		panel.add(btnCalcular);
+		
+		JButton btnLimpiar = new JButton("Limpiar");
+		btnLimpiar.setIcon(new ImageIcon("E:\\Descargar\\ProyectoEclipse\\ConversorDivisas\\src\\Img\\basura.png"));
+		btnLimpiar.setBounds(338, 333, 145, 46);
+		panel.add(btnLimpiar);
+		
+		//labels
+		JLabel lblNewLabel_1 = new JLabel("Temperatura a.");
+		lblNewLabel_1.setFont(new Font("Arial Black", Font.BOLD, 16));
+		lblNewLabel_1.setBounds(33, 44, 240, 34);
+		panel.add(lblNewLabel_1);
 		
 		JLabel lblNewLabel = new JLabel("Conversor De Temperaturas");
 		lblNewLabel.setFont(new Font("Yu Gothic UI Semibold", Font.BOLD, 24));
@@ -31,27 +67,6 @@ public class Temperatura extends JPanel {
 		lblNewLabel.setForeground(new Color(255, 255, 255));
 		lblNewLabel.setBounds(345, 11, 351, 55);
 		add(lblNewLabel);
-		RoundedPanel panel = new RoundedPanel(130);
-		//JPanel panel = new JPanel();
-		panel.setBackground(new Color(40, 32, 40));
-		panel.setBounds(22, 58, 688, 424);
-		add(panel);
-		panel.setLayout(null);
-		
-		JLabel lblNewLabel_1 = new JLabel("Temperatura a.");
-		lblNewLabel_1.setFont(new Font("Arial Black", Font.BOLD, 16));
-		lblNewLabel_1.setBounds(33, 44, 240, 34);
-		panel.add(lblNewLabel_1);
-		
-		JButton btnNewButton = new JButton("Calcular");
-		btnNewButton.setIcon(new ImageIcon("E:\\Descargar\\ProyectoEclipse\\ConversorDivisas\\src\\Img\\humedad.png"));
-		btnNewButton.setBounds(145, 333, 145, 46);
-		panel.add(btnNewButton);
-		
-		JButton btnNewButton_1 = new JButton("Limpiar");
-		btnNewButton_1.setIcon(new ImageIcon("E:\\Descargar\\ProyectoEclipse\\ConversorDivisas\\src\\Img\\basura.png"));
-		btnNewButton_1.setBounds(338, 333, 145, 46);
-		panel.add(btnNewButton_1);
 		
 		JLabel lblNewLabel_2 = new JLabel("Temperatura ");
 		lblNewLabel_2.setFont(new Font("Arial Black", Font.BOLD, 16));
@@ -68,23 +83,27 @@ public class Temperatura extends JPanel {
 		lblNewLabel_4.setBounds(389, 162, 268, 34);
 		panel.add(lblNewLabel_4);
 		
-
+	
+		lblrespuesta = new JLabel("");
+		lblrespuesta.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblrespuesta.setBounds(437, 207, 220, 46);
+		panel.add(lblrespuesta);
 		
-		JComboBox comboBox = new JComboBox();
-		comboBox.setBounds(59, 89, 194, 46);
-		panel.add(comboBox);
+		//Cmb
+		CmbTempeEle = new JComboBox<>(d.getOptionsTemp());
+		CmbTempeEle.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		CmbTempeEle.setBounds(59, 89, 194, 46);
+		CmbTempeEle.addItemListener(this);
+		panel.add(CmbTempeEle);
 		
-		JComboBox comboBox_1 = new JComboBox();
-		comboBox_1.setBounds(426, 89, 200, 46);
-		panel.add(comboBox_1);
+		CmbTempConver = new JComboBox<>(d.getOptionsTemp());
+		CmbTempConver.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		CmbTempConver.setBounds(426, 89, 200, 46);
+		CmbTempConver.addItemListener(this);
+		panel.add(CmbTempConver);
 		
-		TxtCantiTempe = new JTextField();
-		TxtCantiTempe.setFont(new Font("SansSerif", Font.PLAIN, 25));
-		TxtCantiTempe.setBackground(new Color(220, 220, 220));
-		TxtCantiTempe.setBounds(426, 208, 194, 46);
-		panel.add(TxtCantiTempe);
-		TxtCantiTempe.setColumns(10);
 		
+		// text
 		txtRespueTemp = new JTextField();
 		txtRespueTemp.addKeyListener(new KeyAdapter() {
 			@Override
@@ -98,11 +117,48 @@ public class Temperatura extends JPanel {
 				}
 			}
 		});
+		
+		txtRespueTemp = new JTextField();
 		txtRespueTemp.setFont(new Font("SansSerif", Font.PLAIN, 25));
 		txtRespueTemp.setBackground(new Color(220, 220, 220));
 		txtRespueTemp.setBounds(59, 209, 194, 46);
 		panel.add(txtRespueTemp);
 		txtRespueTemp.setColumns(10);
+	
 	}
-
+	
+	public void itemStateChanged(ItemEvent e) {
+		
+		if (e.getSource()==CmbTempConver) {
+            String seleccionado=(String)CmbTempConver.getSelectedItem();
+    
+        }
+		if (e.getSource()==CmbTempeEle) {
+            String seleccionado=(String)CmbTempeEle.getSelectedItem();
+    
+        }
+	}
+	
+	public void actionPerformed(ActionEvent e) {
+		try {
+			if(e.getSource()==btnCalcular) {
+				double number= Double.parseDouble(txtRespueTemp.getText());
+				String tempeOringe=(String) CmbTempConver.getSelectedItem();
+				String tempeDestuno= (String)  CmbTempeEle.getSelectedItem();
+					if(tempeDestuno.equals("Elija opcion" )|| tempeDestuno.equals("Elija opcion")) {
+						
+						JOptionPane.showConfirmDialog(this, "No puedes mandar datos vacios, elija una option de conversion", "Lo siento!!!", JOptionPane.WARNING_MESSAGE);
+						 
+					}else {
+							 String respuesta=""+Temperat.ConverTempe(number, "Celsius", "Fahrenheit");
+						     lblrespuesta.setText(respuesta+" "+tempeOringe);
+						
+					}
+			}
+		}catch (Exception ex) {
+			JOptionPane.showConfirmDialog(this, "No puedes mandar datos vacios", "Lo siento!!!", JOptionPane.WARNING_MESSAGE);
+			
+		}
+	}	
+	
 }
