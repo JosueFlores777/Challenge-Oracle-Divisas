@@ -24,6 +24,7 @@ Tambien tiene la validacion de campos no puede deja Text o combobox solo porque 
 ![validaLetras](https://user-images.githubusercontent.com/64867736/229578828-af26ce4e-febb-48d1-80bb-8e25fd7c78d4.PNG)
 
 Validacion para cerrar el programa pregunta y pregunta si esta seguro
+
 ![pregunta por salir](https://user-images.githubusercontent.com/64867736/229578863-74125331-1c9d-4642-96cc-a721cb85b8fb.PNG)
 ![canceled](https://user-images.githubusercontent.com/64867736/229578867-0ba65ffa-c5da-4e68-a6ca-e0c775247f3f.PNG)
 ![pregunta si esta seguro](https://user-images.githubusercontent.com/64867736/229578885-d2a06e9c-c3a8-4370-b7c3-da29df373821.PNG)
