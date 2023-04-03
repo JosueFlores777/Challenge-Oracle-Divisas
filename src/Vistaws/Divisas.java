@@ -122,7 +122,7 @@ public class Divisas extends JPanel implements ItemListener,ActionListener {
 		//add CMB2
 		CmbDDidivsaA = new JComboBox<>(d.getOptionsDivisas());
 		CmbDDidivsaA.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		CmbDDidivsaA.setBounds(426, 89, 260, 46);
+		CmbDDidivsaA.setBounds(426, 89, 194, 46);
 		CmbDDidivsaA.addItemListener(this);
 		panel.add(CmbDDidivsaA);
 	
@@ -167,7 +167,7 @@ public class Divisas extends JPanel implements ItemListener,ActionListener {
 			
 			
 		} catch (Exception e2) {
-			JOptionPane.showConfirmDialog(this, "No puedes mandar datos vacios", "Lo siento!!!", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showConfirmDialog(this, "No puedes mandar datos nulos", "Lo siento!!!", JOptionPane.WARNING_MESSAGE);
 		}
 	}
 

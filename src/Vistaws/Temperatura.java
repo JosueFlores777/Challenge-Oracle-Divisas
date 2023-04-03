@@ -166,7 +166,7 @@ public class Temperatura extends JPanel  implements ItemListener,ActionListener 
 			}
 			
 		}catch (Exception ex) {
-			JOptionPane.showConfirmDialog(this, "No puedes mandar datos vacios", "Lo siento!!!", JOptionPane.WARNING_MESSAGE);
+			JOptionPane.showConfirmDialog(this, "No puedes mandar datos nulos", "Lo siento!!!", JOptionPane.WARNING_MESSAGE);
 			
 		}
 	}	
