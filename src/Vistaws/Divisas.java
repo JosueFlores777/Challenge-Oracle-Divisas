@@ -16,6 +16,7 @@ public class Divisas extends JPanel implements ItemListener,ActionListener {
 	private JComboBox<String> CmbDDidivsa;
 	private JComboBox<String> CmbDDidivsaA;
 	private JButton btnNewButton;
+	private JButton BtnClear;
 	private JLabel lblrepuesta;
 
 
@@ -43,10 +44,11 @@ public class Divisas extends JPanel implements ItemListener,ActionListener {
 		panel.add(btnNewButton);
 		btnNewButton.addActionListener(this);
 		
-		JButton btnNewButton_1 = new JButton("Limpiar");
-		btnNewButton_1.setIcon(new ImageIcon("E:\\Descargar\\ProyectoEclipse\\ConversorDivisas\\src\\Img\\basura.png"));
-		btnNewButton_1.setBounds(331, 331, 145, 46);
-		panel.add(btnNewButton_1);
+		BtnClear = new JButton("Limpiar");
+		BtnClear.setIcon(new ImageIcon("E:\\Descargar\\ProyectoEclipse\\ConversorDivisas\\src\\Img\\basura.png"));
+		BtnClear.setBounds(331, 331, 145, 46);
+		BtnClear.addActionListener(this);
+		panel.add(BtnClear);
 		
 		
 		// JHlabel
@@ -120,7 +122,7 @@ public class Divisas extends JPanel implements ItemListener,ActionListener {
 		//add CMB2
 		CmbDDidivsaA = new JComboBox<>(d.getOptionsDivisas());
 		CmbDDidivsaA.setFont(new Font("Tahoma", Font.PLAIN, 13));
-		CmbDDidivsaA.setBounds(426, 89, 200, 46);
+		CmbDDidivsaA.setBounds(426, 89, 260, 46);
 		CmbDDidivsaA.addItemListener(this);
 		panel.add(CmbDDidivsaA);
 	
@@ -156,6 +158,14 @@ public class Divisas extends JPanel implements ItemListener,ActionListener {
 		      
 		        
 	        }
+			if(e.getSource()==BtnClear) {
+				txtCantidad.setText("");
+				lblrepuesta.setText("");
+				CmbDDidivsa.setSelectedIndex(0);
+				CmbDDidivsaA.setSelectedIndex(0);
+			}
+			
+			
 		} catch (Exception e2) {
 			JOptionPane.showConfirmDialog(this, "No puedes mandar datos vacios", "Lo siento!!!", JOptionPane.WARNING_MESSAGE);
 		}

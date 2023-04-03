@@ -21,6 +21,7 @@ public class Temperatura extends JPanel  implements ItemListener,ActionListener 
 	Temperat t = new Temperat();
 	private JTextField txtRespueTemp;
 	private JButton btnCalcular;
+	private JButton BtnClear;
 	private JComboBox<String> CmbTempeEle;
 	private JComboBox<String> CmbTempConver;
 	private JLabel lblrespuesta;
@@ -50,10 +51,11 @@ public class Temperatura extends JPanel  implements ItemListener,ActionListener 
 		btnCalcular.addActionListener(this);
 		panel.add(btnCalcular);
 		
-		JButton btnLimpiar = new JButton("Limpiar");
-		btnLimpiar.setIcon(new ImageIcon("E:\\Descargar\\ProyectoEclipse\\ConversorDivisas\\src\\Img\\basura.png"));
-		btnLimpiar.setBounds(338, 333, 145, 46);
-		panel.add(btnLimpiar);
+		BtnClear = new JButton("Limpiar");
+		BtnClear.setIcon(new ImageIcon("E:\\Descargar\\ProyectoEclipse\\ConversorDivisas\\src\\Img\\basura.png"));
+		BtnClear.setBounds(338, 333, 145, 46);
+		BtnClear.addActionListener(this);
+		panel.add(BtnClear);
 		
 		//labels
 		JLabel lblNewLabel_1 = new JLabel("Temperatura a.");
@@ -85,13 +87,13 @@ public class Temperatura extends JPanel  implements ItemListener,ActionListener 
 		
 	
 		lblrespuesta = new JLabel("");
-		lblrespuesta.setFont(new Font("Tahoma", Font.BOLD, 16));
+		lblrespuesta.setFont(new Font("Tahoma Black", Font.BOLD, 16));
 		lblrespuesta.setBounds(437, 207, 220, 46);
 		panel.add(lblrespuesta);
 		
 		//Cmb
 		CmbTempeEle = new JComboBox<>(d.getOptionsTemp());
-		CmbTempeEle.setFont(new Font("Tahoma", Font.PLAIN, 13));
+		CmbTempeEle.setFont(new Font("Tahoma Black", Font.PLAIN, 13));
 		CmbTempeEle.setBounds(59, 89, 194, 46);
 		CmbTempeEle.addItemListener(this);
 		panel.add(CmbTempeEle);
@@ -154,7 +156,15 @@ public class Temperatura extends JPanel  implements ItemListener,ActionListener 
 						     lblrespuesta.setText(respuesta+" "+tempeOringe);
 						
 					}
+					
 			}
+			if(e.getSource()==BtnClear) {
+				txtRespueTemp.setText("");
+				lblrespuesta.setText("");
+				CmbTempConver.setSelectedIndex(0);
+				CmbTempeEle.setSelectedIndex(0);
+			}
+			
 		}catch (Exception ex) {
 			JOptionPane.showConfirmDialog(this, "No puedes mandar datos vacios", "Lo siento!!!", JOptionPane.WARNING_MESSAGE);
 			
