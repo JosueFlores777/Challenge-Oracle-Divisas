@@ -2,20 +2,13 @@ package Vistaws;
 
 import javax.swing.*;
 import java.awt.Color;
-import javax.swing.ImageIcon;
 import java.awt.Font;
 import java.awt.Panel;
-
-import javax.swing.JButton;
-import javax.swing.JTextField;
 
 import Logic.conversor;
 import Logic.datos;
 
-import javax.swing.JComboBox;
 import java.awt.event.*;
-
-import javax.swing.DefaultComboBoxModel;
 
 public class Divisas extends JPanel implements ItemListener,ActionListener {
 	conversor j = new conversor();
@@ -27,6 +20,10 @@ public class Divisas extends JPanel implements ItemListener,ActionListener {
 
 
 	public Divisas() {
+		
+		datos d= new datos();
+		
+		
 		setBounds(0, 0, 737, 517);
 		setBackground(new Color(40, 32, 40));
 		setLayout(null);
@@ -115,8 +112,9 @@ public class Divisas extends JPanel implements ItemListener,ActionListener {
 	
 		
 		//add CMB
-		datos d= new datos();
+		
 		CmbDDidivsa = new JComboBox<>(d.getOptionsDivisas());
+		CmbDDidivsa.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		CmbDDidivsa.setBounds(59, 89, 194, 46);
 		CmbDDidivsa.addItemListener(this);
 		panel.add(CmbDDidivsa);
@@ -124,6 +122,7 @@ public class Divisas extends JPanel implements ItemListener,ActionListener {
 		
 		//add CMB2
 		CmbDDidivsaA = new JComboBox<>(d.getOptionsDivisas());
+		CmbDDidivsaA.setFont(new Font("Tahoma", Font.PLAIN, 13));
 		CmbDDidivsaA.setBounds(426, 89, 200, 46);
 		CmbDDidivsaA.addItemListener(this);
 		panel.add(CmbDDidivsaA);
@@ -144,14 +143,25 @@ public class Divisas extends JPanel implements ItemListener,ActionListener {
 	}
 
 	public void actionPerformed(ActionEvent e) {
-		if (e.getSource()==btnNewButton) {
-			double number = Double.parseDouble(txtCantidad.getText());
-			String result= (String) CmbDDidivsa.getSelectedItem();
-			String result2= (String) CmbDDidivsaA.getSelectedItem();
-	        String respuesta=""+conversor.convertirDivisas(number,result2,result);
-	        lblrepuesta.setText(respuesta+" "+result);
-	        
-        }
+		try {
+			if (e.getSource()==btnNewButton) {
+				double number = Double.parseDouble(txtCantidad.getText());
+				String divisaOrigen= (String) CmbDDidivsa.getSelectedItem();
+				String divisaDestino= (String) CmbDDidivsaA.getSelectedItem();
+				if(divisaOrigen.equals("Elija opcion")|| divisaDestino.equals("Elija opcion")) {
+				
+					JOptionPane.showConfirmDialog(this, "No puedes mandar datos vacios, elija una option", "Lo siento!!!", JOptionPane.WARNING_MESSAGE);
+					
+				}else {
+					 String respuesta=""+conversor.convertirDivisas(number,divisaOrigen,divisaDestino);
+				     lblrepuesta.setText(respuesta+" "+divisaDestino);
+				}
+		      
+		        
+	        }
+		} catch (Exception e2) {
+			JOptionPane.showConfirmDialog(this, "No puedes mandar datos vacios", "Lo siento!!!", JOptionPane.WARNING_MESSAGE);
+		}
 	}
 
 

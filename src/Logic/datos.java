@@ -5,7 +5,7 @@ import javax.swing.JComboBox;
 public class datos {
 		
 	private double  dato1;
-	private String[] OptionsDivisas= {"Elija opcion","USD", "EUR", "Colon Salvadoreño","Peso Mexicano","Peso Argentino","Colon Costarricense"};
+	private String[] OptionsDivisas= {"Elija opcion","USD", "EUR", "JPY","Colon Salvadoreño","Peso Mexicano","Peso Argentino","Colon Costarricense"};
 	private String[] OptionsTemp= {"Elija opcion","Celsius", "Fahrenheit", "Kelvin","Rankine"};
 	
 	public String[] getOptionsDivisas() {
