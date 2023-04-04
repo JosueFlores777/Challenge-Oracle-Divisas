@@ -4,7 +4,6 @@ Conversor de Moneda y Temperatura
 
 Vista del menu principal
 
-![Banner playa ofertas verano Colorido alegre (1)](https://user-images.githubusercontent.com/64867736/229678384-8de93df2-2dba-4d81-a57a-93405f18fa1f.gif)
 
 Vista del formulario Divisas
 ![My Video2](https://user-images.githubusercontent.com/64867736/229679186-a62d54ae-45b9-4bee-a46a-67854134493c.gif)
