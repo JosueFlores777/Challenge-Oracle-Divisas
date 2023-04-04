@@ -3,6 +3,7 @@
 Conversor de Moneda y Temperatura
 
 Vista del menu principal
+![primeg](https://user-images.githubusercontent.com/64867736/229680146-5f068364-52a2-4870-9567-f12d6b03b565.gif)
 
 
 Vista del formulario Divisas
@@ -11,5 +12,4 @@ Vista del formulario Divisas
 
 ![My Video3](https://user-images.githubusercontent.com/64867736/229679687-8f99683e-5069-4695-9b52-badc8ae4085f.gif)
 
-![My Video2](https://user-images.githubusercontent.com/64867736/229679699-35e47a50-82d3-4b5e-9ac7-9fa5fcf236d9.gif)
 ![My Video4](https://user-images.githubusercontent.com/64867736/229679710-36f92312-93b9-496d-99fb-86754692a26d.gif)
