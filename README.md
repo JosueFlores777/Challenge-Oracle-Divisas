@@ -3,8 +3,8 @@
 Conversor de Moneda y Temperatura
 
 Vista del menu principal
-[home](https://user-images.githubusercontent.com/64867736/229578738-60acc97a-2c5c-410c-b1d1-06641d62962e.PNG)
 
+![Banner playa ofertas verano Colorido alegre (1)](https://user-images.githubusercontent.com/64867736/229678384-8de93df2-2dba-4d81-a57a-93405f18fa1f.gif)
 
 Vista del formulario Divisas
 ![ViewDivis](https://user-images.githubusercontent.com/64867736/229578768-72ad4f57-3630-410f-8b11-0fff4e71055d.PNG)
