@@ -1,7 +1,9 @@
 
 # Conversor De Divisas Y temperatura
 
-_Acá va un párrafo que describa lo que es el proyecto_
+conversor de divisas y temperaturas es una aplicación de software diseñada para permitir a los usuarios convertir diferentes tipos de divisas y temperaturas de un sistema a otro. La aplicación utiliza una interfaz gráfica de usuario (GUI) para que el usuario pueda ingresar los valores de entrada, seleccionar los tipos de conversión y ver los resultados de la conversión.
+
+La aplicación está escrita en el lenguaje de programación Java y utiliza bibliotecas estándar de Java, como Swing, para la creación de la GUI y el manejo de eventos. Para realizar las conversiones de divisas, la aplicación utiliza tipos de cambio actualizados de una fuente en línea y para las conversiones de temperatura, utiliza fórmulas matemáticas estándar.
 
 ## Comenzando 🚀
 
