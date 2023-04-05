@@ -50,4 +50,5 @@ Vista del formulario Divisas
 
 Este proyecto está bajo la Licencia (BD24K)
 
-
+# Insignia
+![cms_files_10224_1671211831Prancheta_8](https://user-images.githubusercontent.com/64867736/229959361-0c389f29-d85c-40b3-b412-31c74d5fc449.png)
