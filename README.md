@@ -50,4 +50,4 @@ Vista del formulario Divisas
 
 Este proyecto está bajo la Licencia (BD24K)
 
-
+* https://www.linkedin.com/in/josue-hernández-bd24k/ 
