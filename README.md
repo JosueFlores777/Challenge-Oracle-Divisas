@@ -37,9 +37,9 @@ Vista del formulario Divisas
 
 ## Construido con 🛠️
 
-* Eclipse
 * JDK 19
-
+* Lenguaje de programación: JAVA
+* IDE: Eclipse versión 2022-09
 
 ## Autores ✒️
 
